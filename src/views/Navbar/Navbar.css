@@ -1,4 +1,53 @@
-nav{
-    background-color: #0e5cee;
+/* Estilos gerais da barra de navegação */
+.custom-navbar {
+    background-color: #2E4C6D; /* Fundo da navbar */
+    
 }
 
+/* Logo */
+.custom-navbar .navbar-brand img {
+    max-width: 100%; /* Garante que a imagem se ajuste ao tamanho da tela */
+    height: auto;
+}
+
+/* Estilos dos links da navbar */
+.custom-navbar .nav-link {
+    color: #FFFFFF; /* Cor do texto dos links */
+    background: none; /* Remover fundo padrão */
+    border: none; /* Remover borda */
+    cursor: pointer; /* Mostrar cursor de ponteiro */
+    transition: color 0.3s; /* Transição suave para hover */
+}
+
+.custom-navbar .nav-link:hover {
+    color: #E89BA8; /* Cor ao passar o mouse */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .custom-navbar {
+        padding: 10px 0; /* Reduz o padding em telas menores */
+    }
+
+    .custom-navbar .nav-link {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+    }
+
+    .custom-navbar .navbar-brand {
+        font-size: 18px; /* Tamanho do texto da marca */
+    }
+}
+
+/* Ajustes para o menu colapsado */
+.navbar-collapse {
+    background-color: #2E4C6D; /* Cor de fundo do menu colapsado */
+}
+
+.navbar-collapse .nav-link {
+    padding: 10px 15px; /* Espaçamento interno para links no menu colapsado */
+}
+
+/* Para garantir que o ícone de toggle (hamburger) seja visível */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1); /* Cor do contorno do botão de toggle */
+}

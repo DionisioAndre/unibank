@@ -2,7 +2,7 @@ import "./Navbar.css"
 import { useContext } from "react";
 import AuthContext from "../../context/authContext";
 import { jwtDecode } from "jwt-decode";
-
+import 'bootstrap'
 const { Link } = require("react-router-dom");
 
 function Navbar() {
@@ -15,8 +15,8 @@ function Navbar() {
     }
     return (
         <div  id="bg">
-            <nav className="navbar navbar-expand-lg navbar-dark fixed-top "id="bg1">
-                <div className="container-fluid">
+            <nav className="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar"id="bg1" >
+                <div className="container-fluid ">
                     <Link to="#" className="navbr-brand">
 
                         <img style={{width:"120px",padding:"6px"}} src="" alt=""/>
