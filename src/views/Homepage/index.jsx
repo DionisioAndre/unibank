@@ -17,7 +17,7 @@ function Homepage() {
                             <div className="card-body" style={{ color: "#000" }}>
                                 <h5 className="card-title">Compra e venda de ações</h5>
                                 <p className="card-text">Por ser uma plataforma ágil e prática, o home broker é o canal ideal para compra e venda de ações sem complicações.</p>
-                                <Link to="/ordempage" className="btn btn-secondary">Comprar ações</Link>
+                                <Link to="/HomeBroker" className="btn btn-secondary">Comprar ações</Link>
                             </div>
                         </div>
                     </div>

@@ -1,0 +1,49 @@
+.home-broker {
+    background: linear-gradient(to bottom, #e0e7ff, #d6bcfa); /* Gradiente violeta claro */
+    padding: 20px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    background: linear-gradient(to right, #6b5b95, #d7a9c9); /* Gradiente violeta */
+    color: white;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    margin: 5px 0;
+}
+
+.btn-primary {
+    background-color: #6b5b95; /* Violeta */
+    border-color: #6b5b95;
+}
+
+.btn-primary:hover {
+    background-color: #5c4e8a; /* Violeta mais escuro */
+}
+
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.text-danger {
+    font-size: 0.9rem;
+}

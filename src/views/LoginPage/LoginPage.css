@@ -1,0 +1,40 @@
+.body {
+    background: linear-gradient(to bottom, #6b5b95, #d7a9c9); /* Gradiente violeta */
+    color: #fff;
+    margin-top: 20px;
+}
+
+.card {
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-body {
+    background-color: rgba(0, 0, 0, 0.3); /* Fundo escuro e semitransparente */
+    border-radius: 1rem;
+}
+
+h2, h5 {
+    color: #fff; /* Texto branco para melhor contraste */
+}
+
+.form-control {
+    border-radius: 0.5rem;
+}
+
+.btn-dark {
+    background-color: #0e5cee; /* Azul escuro */
+    border: none;
+}
+
+.btn-dark:hover {
+    background-color: #0c4db1; /* Azul mais escuro para hover */
+}
+
+.link-color {
+    color: #d7a9c9; /* Cor do link em violeta claro */
+}
+
+.link-color:hover {
+    text-decoration: underline; /* Sublinhar no hover */
+}

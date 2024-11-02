@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
     const handleApiError = async (response) => {
         if (!response.ok) {
             const errorData = await response.json();
-            console.log(errorData)
+            console.log(errorData);
             throw new Error(errorData.error || 'Erro ao processar a solicitação');
         }
         return response.json();
@@ -70,7 +70,6 @@ export const AuthProvider = ({ children }) => {
                 body: JSON.stringify({ refresh: refreshTokenValue }),
             });
             const data = await handleApiError(response);
-            alert(data)
             setLocalStorageItem('authToken', data.access);
             dispatch({ type: 'SET_USER', payload: { id: state.user?.id, token: data.access } });
             scheduleTokenRefresh(data.expiresIn);
@@ -85,7 +84,7 @@ export const AuthProvider = ({ children }) => {
         dispatch({ type: 'SET_REFRESH_TIMEOUT', payload: timeoutId });
     }, [refreshToken, state.refreshTimeoutId]);
 
-    const registerUser = useCallback(async (email, username, telefone,password, password2) => {
+    const registerUser = useCallback(async (email, username, telefone, password, password2) => {
         if (isRegistering) return;
 
         setIsRegistering(true);
@@ -106,8 +105,8 @@ export const AuthProvider = ({ children }) => {
             navigate('/loginpage');
             alert("Registro bem-sucedido!");
         } catch (error) {
-            alert("Erro ao registrar. Tente novamente.",error);
-            console.log(error)
+            alert("Erro ao registrar. Tente novamente.");
+            console.log(error);
             dispatch({ type: 'SET_ERROR', payload: error.message });
         } finally {
             setIsRegistering(false);
@@ -121,7 +120,7 @@ export const AuthProvider = ({ children }) => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),
             });
-            
+
             const data = await handleApiError(response);
             setLocalStorageItem('authToken', data.access);
 

@@ -7,7 +7,7 @@ const { Link } = require("react-router-dom");
 
 function Navbar() {
     const {user,logoutUser}=useContext(AuthContext)
-    const token=localStorage.getItem("authTokens")
+    const token=localStorage.getItem("authToken")
 
     if(token){
         const decoded=jwtDecode(token)
@@ -44,6 +44,12 @@ function Navbar() {
                                 <>
                             <li className=" nav-item">
                                 <Link to="/dashboard" className="nav-link">Dashboard</Link>
+                            </li>
+                            <li className=" nav-item">
+                                <Link to="/HomeBroker" className="nav-link">visitar o mercado</Link>
+                            </li>
+                            <li className=" nav-item">
+                                <Link to="/Ativos" className="nav-link">Ativos</Link>
                             </li>
                             <li className=" nav-item">
                                 <Link  className="nav-link" onClick={logoutUser} style={{cursor:"pointer"} } >logout</Link>

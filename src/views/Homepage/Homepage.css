@@ -1,0 +1,56 @@
+.bod {
+    background: linear-gradient(to bottom, #6b5b95, #d7a9c9); /* Gradiente violeta */
+    margin-top: 20px;
+    color: #fff;
+    padding: 40px 0;
+}
+
+#bg {
+    background-color: rgba(255, 255, 255, 0.1); /* Fundo levemente transparente para destaque */
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+    background-color: rgba(0, 0, 0, 0.2); /* Fundo escuro e semitransparente */
+    border-radius: 10px;
+    padding: 20px;
+    color: #fff;
+}
+
+.card-title {
+    font-size: 1.5rem;
+}
+
+.card-text {
+    margin: 10px 0;
+}
+
+.btn-primary {
+    background-color: #5c4e8a; /* Violeta */
+    border-color: #5c4e8a;
+}
+
+.btn-primary:hover {
+    background-color: #4b3d6c; /* Violeta mais escuro */
+}
+
+.btn-secondary {
+    background-color: #0e5cee; /* Azul */
+    border-color: #0e5cee;
+}
+
+.btn-secondary:hover {
+    background-color: #0c4db1; /* Azul mais escuro */
+}
+
+.text-center h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}

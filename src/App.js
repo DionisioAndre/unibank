@@ -1,28 +1,35 @@
-import { Outlet } from 'react-router-dom';
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import PrivateRoute from './utils/PrivateRouter'; // Corrigido para o nome correto
+import PrivateRoute from './utils/PrivateRouter'; // Verifique se o nome do arquivo está correto
 import { AuthProvider } from './context/authContext';
 import Navbar from './views/Navbar';
-import Dashboard from './views/Dashboard';
-import Loginpage from './views/LoginPage';
-import Register from './views/Register';
-import Ordempage from './views/Ordempage';
-import Homepage from './views/Homepage';
+import { AtivoProvider } from './views/AtivoContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// Lazy loading do StockChart
+const StockChart = React.lazy(() => import('./views/StockChart'));
+const HomeBroker = React.lazy(() => import('./views/HomeBroker'));
+const Dashboard = React.lazy(() => import('./views/Dashboard'));
+const Loginpage = React.lazy(() => import('./views/LoginPage'));
+const Register = React.lazy(() => import('./views/Register'));
+const Ordempage = React.lazy(() => import('./views/Ordempage'));
+const Homepage = React.lazy(() => import('./views/Homepage'));
 
 const App = () => {
     return (
         <BrowserRouter>
             <AuthProvider>
                 <Navbar />
-                <Routes>
-                    <Route path='/' element={<Homepage />} />
-                    <Route path='/loginpage' element={<Loginpage />} />
-                    <Route path='/register' element={<Register />} />
-                    <Route path='/ordempage' element={<Ordempage />} />
-                    <Route path='/dashboard' element={<PrivateRoute><Dashboard /></PrivateRoute>} />
-                </Routes>
+                <Suspense fallback={<div>Loading...</div>}>
+                    <Routes>
+                        <Route path='/HomeBroker' element={<AtivoProvider><HomeBroker /></AtivoProvider>} />
+                        <Route path='/' element={<Homepage />} />
+                        <Route path='/StockChart' element={<StockChart />} />
+                        <Route path='/loginpage' element={<Loginpage />} />
+                        <Route path='/register' element={<Register />} />
+                        <Route path='/ordempage' element={<Ordempage />} />
+                        <Route path='/dashboard' element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+                    </Routes>
+                </Suspense>
             </AuthProvider>
         </BrowserRouter>
     );
