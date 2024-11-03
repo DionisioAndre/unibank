@@ -34,7 +34,7 @@ const HomeBroker = () => {
             }
 
             try {
-                await axios.post('http://127.0.0.1:8000/api/routerOrdems/', {
+                await axios.post('https://unibank1.onrender.com/api/routerOrdems/', {
                     user: user,
                     ticker: ativo.ticker,
                     nome: ativo.nome,

@@ -1,6 +1,7 @@
 .home-broker {
     background: linear-gradient(to bottom, #e0e7ff, #d6bcfa); /* Gradiente violeta claro */
     padding: 20px;
+    margin-top: 60px;
 }
 
 .card {
