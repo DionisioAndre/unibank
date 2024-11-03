@@ -4,7 +4,7 @@ import AuthContext from "../../context/authContext";
 import { jwtDecode } from "jwt-decode";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'; // Importante para o funcionamento do navbar
-
+import './Navbar.css'
 function Navbar() {
     const { user, logoutUser } = useContext(AuthContext);
     const token = localStorage.getItem("authToken");

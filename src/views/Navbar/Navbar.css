@@ -51,7 +51,18 @@
     border-color: rgba(255, 255, 255, 0.1); /* Cor do contorno do botão de toggle */
 }
 
+/* Estilizando o ícone do toggle */
+.navbar-toggler .navbar-toggler-icon {
+    background-color: #8e44ad; /* Cor do ícone do toggle */
+    border-radius: 4px; /* Bordas arredondadas para o ícone */
+}
+
 /* Estilo adicional para o container da Navbar */
 #bg {
     background: linear-gradient(to right, #8e44ad, #4a0072); /* Gradiente violeta para o fundo da página */
+}
+
+/* Transição suave para o ícone de toggle ao passar o mouse */
+.navbar-toggler:hover .navbar-toggler-icon {
+    background-color: rgba(255, 255, 255, 0.3); /* Cor ao passar o mouse no ícone */
 }
