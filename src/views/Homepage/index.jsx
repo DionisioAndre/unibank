@@ -6,7 +6,7 @@ function Homepage() {
         <section className="bod" style={{ backgroundColor: "#052b72", marginTop: 20, color: "#fff" }}>
             <div className="container py-5" id="bg">
                 <div className="text-center mb-4">
-                    <h1>UNIBANK</h1>
+                    <h1>KitadiBue</h1>
                     <p className="lead">Invista na bolsa de valores com essa ferramenta que permite mais facilidade e rapidez para suas operações.</p>
                     <Link to="/loginpage"><button className="btn btn-primary btn-lg">Abra a sua conta</button></Link>
                 </div>
