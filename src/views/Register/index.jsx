@@ -44,7 +44,7 @@ function Dionisio() {
                                         <div className="card-body p-4 p-lg-5 text-black">
                                             <form onSubmit={handleSubmit}>
                                                 <div className="d-flex align-items-center mb-3 pb-1">
-                                                    <span className="h2 fw-bold mb-0">Bem vindo a <b>Unibank</b></span>
+                                                    <span className="h2 fw-bold mb-0">Bem vindo a <b>Kitadibue</b></span>
                                                 </div>
                                                 <h5 className="fw-normal mb-3 pb-3" style={{ letterSpacing: 1 }}>Registrar</h5>
                                                 <div className="form-outline mb-4">
