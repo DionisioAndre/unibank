@@ -1,56 +1,68 @@
+/* Estilos gerais para o corpo da página */
 .bod {
-    background: linear-gradient(to bottom, #6b5b95, #d7a9c9); /* Gradiente violeta */
+    background-color: #ffffff;  /* Fundo branco */
     margin-top: 20px;
-    color: #fff;
+    color: #000;  /* Texto preto para contraste */
     padding: 40px 0;
 }
 
-#bg {
-    background-color: rgba(255, 255, 255, 0.1); /* Fundo levemente transparente para destaque */
+/* Estilo de fundo do container para dar destaque */
+#bg1 {
+    background-color: rgba(255, 255, 255, 0.9); /* Fundo branco levemente transparente */
     border-radius: 10px;
     padding: 20px;
 }
 
+/* Estilo geral para os cards */
 .card {
     border: none;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombras suaves para cards */
 }
 
+/* Corpo do card com fundo branco e texto preto */
 .card-body {
-    background-color: rgba(0, 0, 0, 0.2); /* Fundo escuro e semitransparente */
+    background-color: #ffffff; /* Fundo branco */
     border-radius: 10px;
     padding: 20px;
-    color: #fff;
+    color: #000;  /* Texto preto */
 }
 
+/* Títulos dentro dos cards */
 .card-title {
     font-size: 1.5rem;
 }
 
+/* Texto do card */
 .card-text {
     margin: 10px 0;
 }
 
+/* Estilos para o botão primário (abra a sua conta) */
 .btn-primary {
-    background-color: #5c4e8a; /* Violeta */
-    border-color: #5c4e8a;
+    background-color: #ffffff;  /* Botão branco */
+    border-color: #cccccc;  /* Borda cinza clara */
+    color: #000;  /* Texto preto */
 }
 
 .btn-primary:hover {
-    background-color: #4b3d6c; /* Violeta mais escuro */
+    background-color: #f0f0f0;  /* Efeito de hover mais suave */
 }
 
+/* Estilos para o botão secundário (Comprar ações, Comprar títulos) */
 .btn-secondary {
-    background-color: #0e5cee; /* Azul */
-    border-color: #0e5cee;
+    background-color: #cccccc;  /* Cinza claro */
+    border-color: #cccccc;
+    color: #000;  /* Texto preto */
 }
 
 .btn-secondary:hover {
-    background-color: #0c4db1; /* Azul mais escuro */
+    background-color: #b3b3b3;  /* Cinza mais escuro */
 }
 
+/* Estilos para o título centralizado */
 .text-center h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #000;  /* Título preto */
 }

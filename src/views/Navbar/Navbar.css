@@ -1,6 +1,7 @@
 /* Estilos gerais da barra de navegação */
 .custom-navbar {
-    background-color: #5E4B8A; /* Fundo da navbar (roxo escuro) */
+    background-color: #FFFFFF; /* Fundo da navbar (branco) */
+    border-bottom: 1px solid #000000; /* Adiciona uma linha preta na parte inferior */
 }
 
 /* Logo */
@@ -11,15 +12,16 @@
 
 /* Estilos dos links da navbar */
 .custom-navbar .nav-link {
-    color: #FFFFFF; /* Cor do texto dos links */
+    color: #000000; /* Cor do texto dos links (preto) */
     background: none; /* Remover fundo padrão */
     border: none; /* Remover borda */
     cursor: pointer; /* Mostrar cursor de ponteiro */
     transition: color 0.3s; /* Transição suave para hover */
 }
 
+/* Cor do link quando passar o mouse */
 .custom-navbar .nav-link:hover {
-    color: #E89BA8; /* Cor ao passar o mouse */
+    color: #8e44ad; /* Cor roxa quando passar o mouse */
 }
 
 /* Mobile Styles */
@@ -39,30 +41,35 @@
 
 /* Ajustes para o menu colapsado */
 .navbar-collapse {
-    background-color: #5E4B8A; /* Cor de fundo do menu colapsado */
+    background-color: #FFFFFF; /* Cor de fundo do menu colapsado (branco) */
 }
 
 .navbar-collapse .nav-link {
     padding: 10px 15px; /* Espaçamento interno para links no menu colapsado */
+    color: #000000; /* Cor preta para os links no menu colapsado */
+}
+
+.navbar-collapse .nav-link:hover {
+    color: #8e44ad; /* Cor roxa para hover no menu colapsado */
 }
 
 /* Para garantir que o ícone de toggle (hamburger) seja visível */
 .navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.1); /* Cor do contorno do botão de toggle */
+    border-color: #000000; /* Cor preta para o contorno do botão de toggle */
 }
 
 /* Estilizando o ícone do toggle */
 .navbar-toggler .navbar-toggler-icon {
-    background-color: #8e44ad; /* Cor do ícone do toggle */
+    background-color: #000000; /* Cor preta para o ícone do toggle */
     border-radius: 4px; /* Bordas arredondadas para o ícone */
+}
+
+/* Transição suave para o ícone de toggle ao passar o mouse */
+.navbar-toggler:hover .navbar-toggler-icon {
+    background-color: #8e44ad; /* Cor roxa ao passar o mouse no ícone */
 }
 
 /* Estilo adicional para o container da Navbar */
 #bg {
     background: linear-gradient(to right, #8e44ad, #4a0072); /* Gradiente violeta para o fundo da página */
-}
-
-/* Transição suave para o ícone de toggle ao passar o mouse */
-.navbar-toggler:hover .navbar-toggler-icon {
-    background-color: rgba(255, 255, 255, 0.3); /* Cor ao passar o mouse no ícone */
 }

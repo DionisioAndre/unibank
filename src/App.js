@@ -11,8 +11,10 @@ const HomeBroker = React.lazy(() => import('./views/HomeBroker'));
 const Dashboard = React.lazy(() => import('./views/Dashboard'));
 const Loginpage = React.lazy(() => import('./views/LoginPage'));
 const Register = React.lazy(() => import('./views/Register'));
+const AccountPage = React.lazy(() => import('./views/AccountPage'));
 const Ordempage = React.lazy(() => import('./views/Ordempage'));
 const Homepage = React.lazy(() => import('./views/Homepage'));
+const FQA = React.lazy(() => import('./views/FAQ'));
 
 const App = () => {
     return (
@@ -23,9 +25,11 @@ const App = () => {
                     <Routes>
                         <Route path='/HomeBroker' element={<AtivoProvider><HomeBroker /></AtivoProvider>} />
                         <Route path='/' element={<Homepage />} />
+                        <Route path='/help' element={<FQA />} />
                         <Route path='/StockChart' element={<StockChart />} />
                         <Route path='/loginpage' element={<Loginpage />} />
                         <Route path='/register' element={<Register />} />
+                        <Route path='/account/:user_id' element={<AccountPage />} />
                         <Route path='/ordempage' element={<Ordempage />} />
                         <Route path='/dashboard' element={<PrivateRoute><Dashboard /></PrivateRoute>} />
                     </Routes>

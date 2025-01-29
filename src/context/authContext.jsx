@@ -115,22 +115,35 @@ export const AuthProvider = ({ children }) => {
 
     const loginUser = useCallback(async (email, password) => {
         try {
-            const response = await fetch('https://unibank1.onrender.com/api/token/', {
+            const response = await fetch('http://127.0.0.1:8000/api/token/', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, password }),
             });
-
+    
+            // Handle any API errors (e.g., 400, 401) with this function
             const data = await handleApiError(response);
+    
+            // Store the token in local storage
             setLocalStorageItem('authToken', data.access);
-
+    
+            // Decode the JWT token
             const decodedToken = jwtDecode(data.access);
+    
+            // Dispatch user information to context
             dispatch({ type: 'SET_USER', payload: { id: decodedToken.id, token: data.access } });
+    
+            // Schedule token refresh
             scheduleTokenRefresh(data.expiresIn);
         } catch (error) {
+            // Dispatch error for context (optional, depending on your app state management)
             dispatch({ type: 'SET_ERROR', payload: error.message });
+    
+            // Show error message to the user via alert
+            alert(`Erro ao realizar login: ${error.message}`);
         }
     }, [scheduleTokenRefresh]);
+    
 
     const isTokenExpired = useCallback((token) => {
         if (!token) return true;

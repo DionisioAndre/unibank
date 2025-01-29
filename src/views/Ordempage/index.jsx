@@ -53,7 +53,7 @@ const Ordempage = () => {
 
     return (
         <section className="bod" style={{ backgroundColor: "#052b72", marginTop: 20, color: "#fff" }}>
-            <div className="container py-5" id="bg">
+            <div className="container py-5" id="bg1">
                 <div className="text-center mb-4">
                     <h1>Criar Ordem</h1>
                 </div>

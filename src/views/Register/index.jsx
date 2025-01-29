@@ -16,12 +16,13 @@ function Dionisio() {
         e.preventDefault();
         if (password === password2) {
             try {
-                const success = await registerUser(email, username, telefone, password);
+                const success = await registerUser(email, username, telefone, password,password2);
                 if (success) {
                     alert('Registro bem-sucedido!');
                 }
             } catch (error) {
                 const message = error?.response?.data?.error || 'Erro ao registrar. Tente novamente.';
+               console.log(error)
                 alert(message);
             } 
         } else {
