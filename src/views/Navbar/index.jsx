@@ -53,8 +53,8 @@ function Navbar() {
                                 Comprar e Investir
                             </Link>
                             <ul className="dropdown-menu" aria-labelledby="navbarBuyInvest">
-                                <li><Link to="/buy" className="dropdown-item">Comprar</Link></li>
-                                <li><Link to="/invest" className="dropdown-item">Investir</Link></li>
+                                <li><Link to="/HomeBroker" className="dropdown-item">Comprar</Link></li>
+                                
                             </ul>
                         </li>
                        
