@@ -44,9 +44,8 @@ function MinhaConta() {
     if (error) return <div>Erro: {error}</div>;
 
     return (
-        <div className="minha-conta">
-            <h2>Minha Conta</h2>
-            <h3>Minhas Ordens</h3>
+        <div className="minha-conta" style={{ marginTop: '80px' }} >
+                       <h3>Minhas Ordens</h3>
             {ordens.length === 0 ? (
                 <div>Você ainda não tem ordens.</div>
             ) : (
