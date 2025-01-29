@@ -28,12 +28,13 @@ const HomeBroker = () => {
             const decoded = jwtDecode(token);
             const currentTime = Math.floor(Date.now() / 1000); // Tempo atual em segundos
             if (decoded.exp < currentTime) {
-                console.log("Token expirado");
+                console("Sessão expirada,por favor inicie a sessao novamente");
                 return false;
             }
             return true;
         } catch (error) {
             console.error("Erro ao decodificar o token:", error);
+            console("erro na sessao");
             return false;
         }
     };
@@ -43,7 +44,7 @@ const HomeBroker = () => {
             if (token.split('.').length === 3) {
                 const decoded = jwtDecode(token);
                 user_id = decoded.user_id;
-                alert(user_id); // Exemplo de alerta com user_id decodificado
+                // Exemplo de alerta com user_id decodificado
             } else {
                 console.error("Token inválido, faltando partes.");
             }
