@@ -5,6 +5,7 @@ import { useContext } from "react";
 import './HomeBroker.css';
 import { useNavigate } from 'react-router-dom';
 import { jwtDecode } from "jwt-decode";
+import AuthContext from "../../context/authContext";
 
 const HomeBroker = () => {
     const navigate = useNavigate();
@@ -13,16 +14,53 @@ const HomeBroker = () => {
     const [inputs, setInputs] = useState({});
     const { ativos, loading } = useContext(AtivoContext);
     const token = localStorage.getItem("authToken");
+    const { user, logoutUser } = useContext(AuthContext);
+
+    let user_id;
+
+    // Função para verificar a validade do token
+    const checkTokenValidity = (token) => {
+        if (!token) {
+            return false;
+        }
+
+        try {
+            const decoded = jwtDecode(token);
+            const currentTime = Math.floor(Date.now() / 1000); // Tempo atual em segundos
+            if (decoded.exp < currentTime) {
+                console.log("Token expirado");
+                return false;
+            }
+            return true;
+        } catch (error) {
+            console.error("Erro ao decodificar o token:", error);
+            return false;
+        }
+    };
+
+    if (token && checkTokenValidity(token)) {
+        try {
+            if (token.split('.').length === 3) {
+                const decoded = jwtDecode(token);
+                user_id = decoded.user_id;
+                alert(user_id); // Exemplo de alerta com user_id decodificado
+            } else {
+                console.error("Token inválido, faltando partes.");
+            }
+        } catch (error) {
+            console.error("Erro ao decodificar o token:", error);
+        }
+    }
 
     const handleBuyOrder = async (ativo) => {
-        if (token) {
+        if (token && checkTokenValidity(token)) {
             const decoded = jwtDecode(token);
-            const user = decoded.user_id;
+            const user = user_id;
 
             const quantidade = parseInt(inputs[ativo.ticker]?.quantidade, 10);
             const data_da_compra = new Date(inputs[ativo.ticker]?.dataCompra).toISOString();
 
-            // Validations
+            // Validações
             if (quantidade < 1) {
                 alert("A quantidade deve ser maior que zero.");
                 return;
@@ -96,8 +134,7 @@ const HomeBroker = () => {
 
                                     <button 
                                         className="btn btn-primary" 
-                                        onClick={() => setShowForm(prev => ({ ...prev, [ativo.ticker]: !prev[ativo.ticker] }))}
-                                    >
+                                        onClick={() => setShowForm(prev => ({ ...prev, [ativo.ticker]: !prev[ativo.ticker] }))}>
                                         Emitir Pedido de Compra
                                     </button>
 
@@ -120,8 +157,7 @@ const HomeBroker = () => {
                                             />
                                             <button 
                                                 className="btn btn-success mt-2" 
-                                                onClick={() => handleBuyOrder(ativo)}
-                                            >
+                                                onClick={() => handleBuyOrder(ativo)}>
                                                 Confirmar Compra
                                             </button>
                                             <button 
@@ -129,12 +165,11 @@ const HomeBroker = () => {
                                                 onClick={() => {
                                                     setShowForm(prev => ({ ...prev, [ativo.ticker]: false }));
                                                     setInputs(prev => ({ ...prev, [ativo.ticker]: { quantidade: '', dataCompra: '' } }));
-                                                }}
-                                            >
+                                                }}>
                                                 Cancelar
                                             </button>
 
-                                            {/* Validations */}
+                                            {/* Validações */}
                                             {inputs[ativo.ticker]?.quantidade < 1 && inputs[ativo.ticker]?.quantidade !== undefined && (
                                                 <div className="text-danger mt-2">A quantidade deve ser maior que zero.</div>
                                             )}

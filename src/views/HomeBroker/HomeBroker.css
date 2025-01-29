@@ -1,5 +1,5 @@
 .home-broker {
-    background: linear-gradient(to bottom, #e0e7ff, #d6bcfa); /* Gradiente violeta claro */
+    background: #f8f9fa; /* Altere para uma cor mais neutra, como branco ou cinza claro */
     padding: 20px;
     margin-top: 60px;
 }
@@ -11,8 +11,8 @@
 }
 
 .card-body {
-    background: linear-gradient(to right, #6b5b95, #d7a9c9); /* Gradiente violeta */
-    color: white;
+    background: #ffffff; /* Altere para branco ou uma cor mais neutra */
+    color: black; /* Mude a cor do texto para preto ou uma cor mais legível */
     border-radius: 10px;
     padding: 20px;
 }
@@ -27,12 +27,12 @@
 }
 
 .btn-primary {
-    background-color: #6b5b95; /* Violeta */
-    border-color: #6b5b95;
+    background-color: #007bff; /* Mude a cor do botão para azul, se preferir */
+    border-color: #007bff;
 }
 
 .btn-primary:hover {
-    background-color: #5c4e8a; /* Violeta mais escuro */
+    background-color: #0056b3; /* Um tom de azul mais escuro */
 }
 
 .btn-success {
