@@ -28,13 +28,13 @@ const HomeBroker = () => {
             const decoded = jwtDecode(token);
             const currentTime = Math.floor(Date.now() / 1000); // Tempo atual em segundos
             if (decoded.exp < currentTime) {
-                console("Sessão expirada,por favor inicie a sessao novamente");
+                alert("Sessão expirada,por favor inicie a sessao novamente");
                 return false;
             }
             return true;
         } catch (error) {
             console.error("Erro ao decodificar o token:", error);
-            console("erro na sessao");
+            alert("erro na sessao");
             return false;
         }
     };

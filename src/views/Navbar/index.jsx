@@ -29,7 +29,7 @@ function Navbar() {
         <nav className="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
             <div className="container-fluid">
                 <Link to="/" className="navbar-brand">
-                    <span style={{ fontSize: "1.8rem", fontWeight: "bold", color: "#000" }}>KitadiBwé</span> {/* Logo substituído por texto */}
+                    <span style={{ fontSize: "1.8rem", fontWeight: "bold", color: "#000" }}>KitadiBwé</span>
                 </Link>
                 <button
                     className="navbar-toggler"
@@ -54,13 +54,13 @@ function Navbar() {
                             </Link>
                             <ul className="dropdown-menu" aria-labelledby="navbarBuyInvest">
                                 <li><Link to="/HomeBroker" className="dropdown-item">Comprar</Link></li>
-                                
                             </ul>
                         </li>
                        
                         <li className="nav-item">
                             <Link to="/help" className="nav-link">Ajuda</Link>
                         </li>
+
                         {!token && (
                             <>
                                 <li className="nav-item">
@@ -72,9 +72,14 @@ function Navbar() {
                             </>
                         )}
                         {token && (
-                            <li className="nav-item">
-                                <span className="nav-link" onClick={logoutUser} style={{ cursor: "pointer" }}>Logout</span>
-                            </li>
+                            <>
+                                <li className="nav-item">
+                                    <Link to={`/MinhaConta`} className="nav-link">Minha Conta</Link> {/* Link para a conta do usuário */}
+                                </li>
+                                <li className="nav-item">
+                                    <span className="nav-link" onClick={logoutUser} style={{ cursor: "pointer" }}>Logout</span>
+                                </li>
+                            </>
                         )}
                     </ul>
                 </div>

@@ -13,6 +13,7 @@ const Loginpage = React.lazy(() => import('./views/LoginPage'));
 const Register = React.lazy(() => import('./views/Register'));
 const AccountPage = React.lazy(() => import('./views/AccountPage'));
 const Ordempage = React.lazy(() => import('./views/Ordempage'));
+const MinhaConta = React.lazy(() => import('./views/MinhaConta'));
 const Homepage = React.lazy(() => import('./views/Homepage'));
 const FQA = React.lazy(() => import('./views/FAQ'));
 
@@ -31,6 +32,7 @@ const App = () => {
                         <Route path='/register' element={<Register />} />
                         <Route path='/account/:user_id' element={<AccountPage />} />
                         <Route path='/ordempage' element={<Ordempage />} />
+                        <Route path='/MinhaConta' element={<MinhaConta />} />
                         <Route path='/dashboard' element={<PrivateRoute><Dashboard /></PrivateRoute>} />
                     </Routes>
                 </Suspense>
