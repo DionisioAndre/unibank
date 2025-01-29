@@ -45,7 +45,7 @@ function MinhaConta() {
 
     return (
         <div className="minha-conta" style={{ marginTop: '80px' }} >
-                       <h3>Minhas Ordens</h3>
+                       <h3 style={{ marginTop: '80px' }}>Minhas Ordens</h3>
             {ordens.length === 0 ? (
                 <div>Você ainda não tem ordens.</div>
             ) : (
